@@ -1,4 +1,5 @@
 pipeline {
+    //agent any
     agent {
         label 'AGENT-1'
     } 
@@ -16,7 +17,7 @@ pipeline {
         stage('Deploy') { 
             steps {
                     sh 'echo This is deploy'
-                    error 'pipeline failed'
+                    //error 'pipeline failed'
             }
         }
     }
@@ -24,6 +25,7 @@ pipeline {
     post {
          always{
              echo "This section runs always"
+             deleteDir()
         }
         success{
             echo " This section run when pipeline success"
