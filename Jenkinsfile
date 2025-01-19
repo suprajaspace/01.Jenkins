@@ -1,5 +1,4 @@
 pipeline {
-    # agent any
     agents {
         label 'AGENT-1'
     } 
