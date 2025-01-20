@@ -33,7 +33,8 @@ pipeline {
         }
         stage('Deploy') { 
             when {
-                expression { env.BRANCH_NAME == 'main' }
+                expression { env.BRANCH_NAME == '*/main' }
+                // expression { env.BRANCH_NAME == 'main' }
                 // env.GIT_BRANCH = 'origin/main'
             // branch 'main'
             }
